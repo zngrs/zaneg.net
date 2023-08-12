@@ -8,6 +8,9 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+input { outline: none; }
+
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -15,13 +18,80 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-start-rgb));
+}
+*/
+
+* {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  ;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fake-term {
+  /* box-shadow: 4px 3px 0px 0px rgb(38, 38, 38); */
+  box-shadow: 0 0 0 2px #000, 0 0 0 4px #fff, 3px 3px 0 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.fake-term--subtle {
+  /* box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.3); */
+  box-shadow: 2px 2px #000, -1px -1px #fff;
+
+
+}
+
+
+.p5--button {
+@apply bg-white absolute top-0 left-0 m-3 px-3 py-2 rounded hover:underline font-semibold;
+}
+
+.ll {
+  @apply leading-loose
+}
+
+.cm-editor * {
+  @apply font-mono text-sm
+}
+
+.custom-tab {
+  /* Add styles for each tab */
+  padding: 10px;
+  background-color: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 5px;
+  color: rgb(201, 201, 201);
+  @apply outline-none capitalize font-mono
+}
+
+.custom-tab:hover {
+  @apply underline
+}
+
+.custom-tab.active-tab {
+  /* Add styles for the active tab */
+  background-color: inherit;
+  color: white;
+
+
+}
+
+.custom-tab-list {
+  @apply flex
 }
