@@ -1,8 +1,14 @@
 * {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: arrik-Regular, Helvetica, Arial, sans-serif;
 
 
 
+}
+@import url("https://zngrs.github.io/zaneg.net--assets/static/fonts/Karrik-Regular.ttf");
+
+@font-face {
+  font-family: Karrik-Regular;
+  src: url("https://zngrs.github.io/zaneg.net--assets/static/fonts/Karrik-Regular.ttf");
 }
 
 @tailwind base;
@@ -47,4 +53,9 @@ body {
   border-width: 1px;
   border-top: none;
   border-bottom: none;
+}
+
+
+.font-serif {
+  font-family: 'Times New Roman', Times, serif !important;
 }
