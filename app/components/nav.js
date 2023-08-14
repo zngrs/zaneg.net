@@ -1,7 +1,11 @@
 "use client";
+import latestChanges from "./functions/latestChanges";
+
 import { useEffect, useState } from "react";
 export default function Nav() {
     const [date, setDate] = useState("Thursday, 1 January, 1970");
+
+    const [latest, setLatest] = useState({"ago" : "", "date": "", "message": ""});
     useEffect(() => {
         const options = {
             weekday: "long",
@@ -10,6 +14,16 @@ export default function Nav() {
             day: "numeric",
         };
         setDate(new Date().toLocaleDateString("en-US", options));
+
+        // ##############
+
+        let latestChange;
+
+        latestChanges().then((result) => {
+        setLatest(result);
+        });
+
+        console.log(latestChange);
     }, []);
     return (
         <>
@@ -33,9 +47,9 @@ export default function Nav() {
                 <div className="border=text border-b-[1px] border-t-[1px]  px-4 py-2">
                     <p className="font-serif md:text-base sm:text-sm text-xs">
                         {date}.
-                        <span className="pl-3 ml-3 border-l-[1px] border=text font-serif">
-                            {"last updated 4 days ago."}
-                        </span>
+                        <a href="/updates" className="pl-3 ml-3 border-l-[1px] border=text font-serif">
+                            Last updated {latest.ago}
+                        </a>
                     </p>
                 </div>
             </div>
