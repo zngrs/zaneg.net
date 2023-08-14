@@ -59,3 +59,10 @@ body {
 .font-serif {
   font-family: 'Times New Roman', Times, serif !important;
 }
+
+
+span {
+  font: inherit;
+  font-size: inherit;
+  color: inherit;
+}
