@@ -1,5 +1,5 @@
 "use client";
-import latestChanges from "./functions/latestChanges";
+import latestChanges from "./functions/latestChanges.js";
 
 import { useEffect, useState } from "react";
 export default function Nav() {
