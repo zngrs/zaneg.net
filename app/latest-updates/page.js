@@ -1,7 +1,31 @@
 "use client";
 import { useEffect, useState } from "react";
-import allChanges from "../components/functions/allChanges";
 import Nav from "../components/nav";
+
+async function getData() {
+    const res = await fetch(
+        "https://api.github.com/repos/zngrs/zaneg.net/commits"
+    );
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error("Failed to fetch data");
+    }
+
+    return res.json();
+}
+
+async function allChanges() {
+    const data = await getData();
+
+
+    let r = data;
+    return r;
+}
+
+
 
 export default function Updates() {
     const [allChangesJson, setAllChangesJson] = useState([]);
@@ -56,7 +80,7 @@ export default function Updates() {
                         </div>
                     </div>
 
-                    <div className="border=text border-b-[1px] h-[1px]"></div>
+                    <div key={i + "a"} className="border=text border-b-[1px] h-[1px]"></div>
                 </>
             ))}
         </>
