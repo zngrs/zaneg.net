@@ -47,7 +47,7 @@ export default function Nav() {
                 <div className="border=text border-b-[1px] border-t-[1px]  px-4 py-2">
                     <p className="font-serif md:text-base sm:text-sm text-xs">
                         {date}.
-                        <a href="/updates" className="pl-3 ml-3 border-l-[1px] border=text font-serif">
+                        <a href="/latest-updates" className="pl-3 ml-3 border-l-[1px] border=text font-serif">
                             Last updated {latest.ago}
                         </a>
                     </p>
