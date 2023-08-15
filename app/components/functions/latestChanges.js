@@ -64,3 +64,4 @@ export default async function latestChanges() {
     r.ago = getTimeAgoString(dateObject);
     return r;
 }
+
