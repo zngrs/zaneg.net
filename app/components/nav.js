@@ -27,12 +27,12 @@ export default function Nav() {
     }, []);
     return (
         <>
-            <div className="">
+            <div className="mt-4">
                 <div className="flex">
                     <div className="cell border=text px-6 py-4 h-full">
                         <a
                             href="/"
-                            className="font-semibold text-lg sm:text-3xl md:text-5xl hover:underline"
+                            className="font-semibold text-2xl sm:text-4xl md:text-5xl hover:underline"
                         >
                             zaneg.net
                         </a>
@@ -45,9 +45,9 @@ export default function Nav() {
                     </div>
                 </div>
                 <div className="border=text border-b-[1px] border-t-[1px]  px-4 py-2">
-                    <p className="font-serif md:text-base sm:text-sm text-xs">
+                    <p className="font-serif md:text-base sm:text-sm text-xs font-thin">
                         {date}.
-                        <a href="/latest-updates" className="pl-3 ml-3 border-l-[1px] border=text font-serif">
+                        <a href="/latest-updates" className="hover:underline font-medium pl-3 ml-3 border-l-[1px] border=text font-serif">
                             Last updated {latest.ago}
                         </a>
                     </p>

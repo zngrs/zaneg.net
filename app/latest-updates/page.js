@@ -41,7 +41,7 @@ export default function Updates() {
     return (
         <>
             <Nav />
-
+<div className="mt-10">
             {allChangesJson.map((user, i, length) => (
                 <>
                     <div key={i} className="mx-3 my-6 flex">
@@ -65,7 +65,7 @@ export default function Updates() {
                                 hour12: true,
                             })}
                         </p>
-                        <div className="">
+                        <div className="hidden sm:inline-block">
                             <p
                                 style={{
                                     filter:
@@ -73,16 +73,17 @@ export default function Updates() {
                                             ? "brightness(1)"
                                             : "brightness(1.5)",
                                 }}
-                                className="dark:text-gray-300 text-gray-700 mr-8"
+                                className="dark:text-gray-300 text-gray-700 mr-8 italic"
                             >
-                                {user.commit.message}
+                                "{user.commit.message}"
                             </p>
                         </div>
                     </div>
 
-                    <div key={i + "a"} className="border=text border-b-[1px] h-[1px]"></div>
+                    <div key={i + "a"} className="border-zinc-500 border-b-[1px] h-[1px] my-2"></div>
                 </>
             ))}
+            </div>
         </>
     );
 }
