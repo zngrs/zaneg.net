@@ -1,11 +1,23 @@
 "use client";
 import latestChanges from "./functions/latestChanges.js";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 export default function Nav() {
     const [date, setDate] = useState("Thursday, 1 January, 1970");
 
-    const [latest, setLatest] = useState({"ago" : "", "date": "", "message": ""});
+    const [latest, setLatest] = useState({ ago: "", date: "", message: "" });
+
+    const [aboutHeight, setAboutHeight] = useState(0);
+
+    const [aboutToggled, setAboutToggled] = useState(false);
+
+    const ref = useRef(null);
+
+    function toggleAbout() {
+        setAboutToggled(!aboutToggled);
+        console.log(aboutToggled);
+    }
+
     useEffect(() => {
         const options = {
             weekday: "long",
@@ -20,14 +32,22 @@ export default function Nav() {
         let latestChange;
 
         latestChanges().then((result) => {
-        setLatest(result);
+            setLatest(result);
         });
 
-        console.log(latestChange);
+        setAboutHeight(ref.current.clientHeight);
     }, []);
     return (
         <>
-            <div className="mt-4">
+            <div
+                style={{
+                    marginTop: `-${!aboutToggled ? aboutHeight + 1 : 0}px`,
+                    transition: ".3s",
+                }}
+            >
+                <div className="border=text border-b-[1px]" ref={ref}>
+                    About content.
+                </div>
                 <div className="flex">
                     <div className="cell border=text px-6 py-4 h-full">
                         <a
@@ -39,7 +59,10 @@ export default function Nav() {
                     </div>
                     <div className="spacer flex-grow"></div>
                     <div className="cell border=text px-6 py-4">
-                        <button className="font-bold text-lg sm:text-3xl md:text-5xl h-full ">
+                        <button
+                            className="font-bold text-lg sm:text-3xl md:text-5xl h-full "
+                            onClick={toggleAbout}
+                        >
                             about
                         </button>
                     </div>
@@ -47,7 +70,10 @@ export default function Nav() {
                 <div className="border=text border-b-[1px] border-t-[1px]  px-4 py-2">
                     <p className="font-serif md:text-base sm:text-sm text-xs font-thin">
                         {date}.
-                        <a href="/latest-updates" className="hover:underline font-medium pl-3 ml-3 border-l-[1px] border=text font-serif">
+                        <a
+                            href="/latest-updates"
+                            className="hover:underline font-medium pl-3 ml-3 border-l-[1px] border=text font-serif"
+                        >
                             Last updated {latest.ago}
                         </a>
                     </p>
