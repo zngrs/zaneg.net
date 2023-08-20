@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Nav from "../components/nav";
-import AiOutlineDown from "../components/AiOutlineDown";
+import AiOutlineDown from "../components/AiOutlineDown.js";
 
 async function getData() {
     const res = await fetch(
