@@ -90,7 +90,7 @@ export default function Updates() {
                             }}
                             key={i + "a"}
                             className="border-zinc-500 border-b-[1px] h-[1px] my-2"
-                            ><AiOutlineDown/>
+                            >
                         </div>
                     </>
                 ))}
