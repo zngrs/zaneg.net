@@ -73,7 +73,7 @@ export default function Nav() {
                     <p className="text-sm font-semibold capitalized">
                         {date}.
                         <a
-                            href="/changes"
+                            href="/latest-changes"
                             className="hover:underline font-medium pl-3 ml-3 border-l-[1px] border=text"
                         >
                             Last updated {latest.ago}
