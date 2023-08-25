@@ -32,20 +32,27 @@ export default function Updates() {
 
         allChanges().then((result) => {
             setAllChangesJson(result);
-            console.log(result);
         });
     }, []);
 
     return (
         <div className="relative">
             <Nav />
-        <div className=" ml-6 mt-5 "> 
-        <div className="text-3xl font-medium ">Latest changes on <span className="text-blue-500 font-semibold">zaneg.net:</span></div>
-        </div>
+            <div className=" ml-6 mt-5 ">
+                <div className="text-3xl font-medium ">
+                    Latest changes on{" "}
+                    <span className="text-blue-500 font-semibold">
+                        zaneg.net:
+                    </span>
+                </div>
+            </div>
             <div className="mt-5">
                 {allChangesJson.map((user, i, length) => (
                     <>
-                        <div key={i} className="mx-6 my-6 sm:flex display-block">
+                        <div
+                            key={i}
+                            className="mx-6 my-6 sm:flex display-block"
+                        >
                             <p
                                 style={{
                                     filter:
@@ -68,9 +75,6 @@ export default function Updates() {
                             </p>
                             <div className="">
                                 <p
-                                    onClick={() => {
-                                        console.log(this);
-                                    }}
                                     style={{
                                         filter:
                                             i % 2 == 0
@@ -79,7 +83,10 @@ export default function Updates() {
                                     }}
                                     className="dark:text-gray-300 my-6 ml-4 sm:ml-0 sm:my-0 text-gray-700 mr-8 italic"
                                 >
-                                    <span className="sm:hidden inline-block">-&nbsp;</span>"{user.commit.message}"
+                                    <span className="sm:hidden inline-block">
+                                        -&nbsp;
+                                    </span>
+                                    "{user.commit.message}"
                                 </p>
                             </div>
                         </div>
@@ -93,8 +100,7 @@ export default function Updates() {
                             }}
                             key={i + "a"}
                             className="border-zinc-500 border-b-[1px] h-[1px] my-2"
-                            >
-                        </div>
+                        ></div>
                     </>
                 ))}
             </div>

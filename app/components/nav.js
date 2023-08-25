@@ -31,6 +31,7 @@ export default function Nav() {
         setDate(new Date().toLocaleDateString("en-US", options));
 
         // ##############
+        // document.body.classList.add("bg-alternate")
 
         let latestChange;
 
@@ -52,7 +53,7 @@ export default function Nav() {
                     marginTop: `-${!aboutToggled ? aboutHeight + 1 : 0}px`,
                     transition: `${isLoaded ? ".3s" : "none"}`,
                 }}
-                className="bg-alternate z-[5] "
+                className="z-[5] "
             >
                 <div
                     className="border=text border-b-[1px] absolute z-[-5]"
@@ -80,7 +81,7 @@ export default function Nav() {
                     </div>
                 </div>
             </div>
-            <div className="border=text border-b-[1px] border-t-[1px] sticky top-0 px-4 py-2 bg-alternate glass">
+            <div className="border=text border-b-[1px] border-t-[1px] sticky top-0 px-6 py-2 bg-alternate glass">
                 <p className="text-sm font-semibold capitalized">
                     {date}.
                     <a
