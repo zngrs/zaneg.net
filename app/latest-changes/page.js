@@ -37,7 +37,7 @@ export default function Updates() {
     }, []);
 
     return (
-        <>
+        <div className="relative">
             <Nav />
         <div className=" ml-6 mt-5 "> 
         <div className="text-3xl font-medium ">Latest changes on <span className="text-blue-500 font-semibold">zaneg.net:</span></div>
@@ -98,6 +98,6 @@ export default function Updates() {
                     </>
                 ))}
             </div>
-        </>
+        </div>
     );
 }

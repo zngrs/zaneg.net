@@ -12,6 +12,7 @@ export default function Nav() {
     const [aboutToggled, setAboutToggled] = useState(false);
 
     const ref = useRef(null);
+    const ref2 = useRef(null);
 
     function toggleAbout() {
         setAboutToggled(!aboutToggled);
@@ -32,7 +33,7 @@ export default function Nav() {
         let latestChange;
 
         latestChanges().then((result) => {
-            setLatest(result);
+      setLatest(result);
         });
 
         setAboutHeight(ref.current.clientHeight);
@@ -45,7 +46,7 @@ export default function Nav() {
                     transition: ".3s",
 
                 }}
-        className="bg-alternate"
+        className="bg-alternate z-[5] relative"
             >
                 <div className="border=text border-b-[1px]" ref={ref}>
                     About content.
@@ -69,7 +70,8 @@ export default function Nav() {
                         </button>
                     </div>
                 </div>
-                <div className="border=text border-b-[1px] border-t-[1px]  px-4 py-2">
+            </div>
+                <div className="border=text border-b-[1px] border-t-[1px] sticky top-0 px-4 py-2 bg-alternate glass">
                     <p className="text-sm font-semibold capitalized">
                         {date}.
                         <a
@@ -80,7 +82,7 @@ export default function Nav() {
                         </a>
                     </p>
                 </div>
-            </div>
+
         </>
     );
 }
