@@ -37,6 +37,7 @@ export default function Nav() {
         });
 
         setAboutHeight(ref.current.clientHeight);
+        ref.current.classList.remove("absolute")
     }, []);
     return (
         <>
@@ -46,9 +47,9 @@ export default function Nav() {
                     transition: ".3s",
 
                 }}
-        className="bg-alternate z-[5] relative"
+        className="bg-alternate z-[5] "
             >
-                <div className="border=text border-b-[1px]" ref={ref}>
+                <div className="border=text border-b-[1px] absolute z-[-5]" ref={ref}>
                     About content.
                 </div>
                 <div className="flex">
