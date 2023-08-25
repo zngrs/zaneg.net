@@ -13,6 +13,7 @@ export default function Nav() {
 
     const ref = useRef(null);
     const ref2 = useRef(null);
+    let isLoaded = false;
 
     function toggleAbout() {
         setAboutToggled(!aboutToggled);
@@ -36,15 +37,17 @@ export default function Nav() {
       setLatest(result);
         });
 
+        isLoaded = true;
         setAboutHeight(ref.current.clientHeight);
         ref.current.classList.remove("absolute")
     }, []);
     return (
         <>
             <div
+            ref={ref2}
                 style={{
                     marginTop: `-${!aboutToggled ? aboutHeight + 1 : 0}px`,
-                    transition: ".3s",
+                    transition: `${isLoaded? ".3s" : "none"}`,
 
                 }}
         className="bg-alternate z-[5] "
