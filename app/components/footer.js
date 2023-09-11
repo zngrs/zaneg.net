@@ -3,7 +3,7 @@ export default function Footer() {
         <>
             <footer className="relative border=text border-t-[1px] px-6 py-8">
                 <h1 className="font-semibold text-lg py-2">zaneg.net</h1>
-                <ul className="ml-2">
+              <ul className="ml-2">
                     <li className="py-3">
                         <a
                         target={"_blank"}

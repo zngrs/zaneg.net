@@ -8,7 +8,7 @@ export default function Home() {
             <Nav />
             <div className="px-6 min-h-screen">
                 <div className="py-4">
-                    <h1 className="text-3xl font-semibold capitalize">Minor projects</h1>
+                    <h1 className="text-3xl font-semibold capitalize">Minor items</h1>
                 </div>
             </div>
             <Footer/>

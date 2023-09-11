@@ -1,8 +1,5 @@
 * {
   font-family: arrik-Regular, Helvetica, Arial, sans-serif;
-
-
-
 }
 
 @import url("https://zngrs.github.io/zaneg.net--assets/static/fonts/Karrik-Regular.ttf");
@@ -10,6 +7,12 @@
 @font-face {
   font-family: Karrik-Regular;
   src: url("https://zngrs.github.io/zaneg.net--assets/static/fonts/Karrik-Regular.ttf");
+}
+
+
+@font-face {
+  font-family: Imbue;
+  src: url("https://zngrs.github.io/zaneg.net--assets/static/fonts/Imbue/Imbue-VariableFont_opsz,wght.ttf");
 }
 
 @tailwind base;
@@ -25,7 +28,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-      --subtle-text: 200, 200, 200;
+    --subtle-text: 200, 200, 200;
     --background-start-rgb: 22, 22, 23;
     --background-alternate-rgb: 26, 26, 28;
     --background-end-rgb: 16, 17, 18;
@@ -107,10 +110,6 @@ footer img {
   filter: contrast(50%) opacity(20%);
 }
 
-img {
-  object-fit: none;
-}
-
 footer>div {
   position: absolute;
   width: 100%;
@@ -125,4 +124,24 @@ footer>div {
 
 svg {
   margin: 4px;
+}
+
+.newspaper-header {
+	font-family: "Imbue" !important;
+	display: inline-block;
+}
+
+.center {
+	display: flex;
+	justify-content: center !important;
+	align-items: center;
+	
+}
+
+br {
+	margin-bottom: 18px;
+}
+
+.newspaper-bg {
+	background-color: #CED0CF;
 }

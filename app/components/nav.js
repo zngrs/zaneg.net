@@ -33,8 +33,6 @@ export default function Nav() {
         // ##############
         // document.body.classList.add("bg-alternate")
 
-        let latestChange;
-
         latestChanges().then((result) => {
             setLatest(result);
         });
